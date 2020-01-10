@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BrowserSimulator.Models;
+using BrowserSimulator.Models.Finders;
+using BrowserSimulator.PageComponents.Models;
 
 namespace BrowserSimulator
 {
@@ -23,6 +27,25 @@ namespace BrowserSimulator
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var tra = new Browser(WebBrowser);
+                await tra.Navigate("https://github.com/DrMueller");
+
+                var button = tra.Find<ButtonComponent>(f => f.ById("tra"));
+
+                Debug.WriteLine("Tra");
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
         }
     }
 }

@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Html\Services\" />
+    <Folder Include="Models\Finders\Model\" />
+    <Folder Include="Models\WebElements\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Microsoft.mshtml">
-      <HintPath>..\..\..\..\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
+      <HintPath>..\..\..\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
     </Reference>
   </ItemGroup>
 
